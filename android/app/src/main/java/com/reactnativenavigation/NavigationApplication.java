@@ -49,6 +49,10 @@ public abstract class NavigationApplication extends Application implements React
                     android.R.anim.fade_out
             ).toBundle();
             super.startActivity(intent, bundle);
+        } else if (animationType != null && animationType.equals("none")) {
+            Bundle bundle = ActivityOptionsCompat.makeCustomAnimation(getApplicationContext(),
+                                                                      0,0 ).toBundle();
+            super.startActivity(intent, bundle);
         } else {
             super.startActivity(intent);
         }
